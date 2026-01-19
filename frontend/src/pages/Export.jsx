@@ -106,7 +106,7 @@ const Export = () => {
       }
 
       const response = await axios.post(
-        'http://localhost:8000/api/export/download',
+        `${API_URL}/api/export/download`,
         exportData,
         {
           headers: {

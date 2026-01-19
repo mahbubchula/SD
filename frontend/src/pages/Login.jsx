@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { FiMail, FiLock, FiDatabase } from 'react-icons/fi'
 import axios from 'axios'
+import API_URL from '../config'
 
 const Login = ({ setIsAuthenticated }) => {
   const navigate = useNavigate()
@@ -24,7 +25,7 @@ const Login = ({ setIsAuthenticated }) => {
     setLoading(true)
 
     try {
-      const response = await axios.post('http://localhost:8000/api/auth/login', formData)
+      const response = await axios.post(`${API_URL}/api/auth/login`, formData)
 
       if (response.data.access_token) {
         localStorage.setItem('token', response.data.access_token)

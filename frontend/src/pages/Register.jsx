@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { FiMail, FiLock, FiUser, FiDatabase } from 'react-icons/fi'
 import axios from 'axios'
+import API_URL from '../config'
 
 const Register = ({ setIsAuthenticated }) => {
   const navigate = useNavigate()
@@ -38,7 +39,7 @@ const Register = ({ setIsAuthenticated }) => {
     setLoading(true)
 
     try {
-      const response = await axios.post('http://localhost:8000/api/auth/register', {
+      const response = await axios.post(`${API_URL}/api/auth/register`, {
         full_name: formData.full_name,
         email: formData.email,
         password: formData.password,

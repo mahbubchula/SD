@@ -287,7 +287,7 @@ const Generator = () => {
       console.log('=========================')
 
       const response = await axios.post(
-        'http://localhost:8000/api/generate/generate',
+        `${API_URL}/api/generate/generate`,
         requestData,
         {
           headers: {
@@ -355,7 +355,7 @@ const Generator = () => {
       const token = localStorage.getItem('token')
 
       const response = await axios.post(
-        'http://localhost:8000/api/export/download',
+        `${API_URL}/api/export/download`,
         {
           data: generatedData,
           format: format,
