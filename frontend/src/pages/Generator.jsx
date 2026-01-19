@@ -259,6 +259,12 @@ const Generator = () => {
 
     try {
       const token = localStorage.getItem('token')
+      
+      if (!token) {
+        toast.error('Please login again')
+        navigate('/login')
+        return
+      }
 
       const requestData = {
         sample_size: sampleSize,
