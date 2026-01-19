@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { FiDownload, FiFile, FiCheckCircle, FiAlertCircle } from 'react-icons/fi'
 import axios from 'axios'
 import { toast } from 'react-toastify'
+import API_URL from '../config'
 
 const Export = () => {
   const [generatedData, setGeneratedData] = useState(null)
